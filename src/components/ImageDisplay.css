@@ -1,0 +1,15 @@
+#display{
+    background: grey;
+    /* max-width: 500px; */
+    max-height: 500px;
+}
+
+.image-display{
+   height: fit-content;
+   justify-self: center;
+   align-self: center;
+}
+
+input[type="file"]{
+   max-height: 100px;;
+}
