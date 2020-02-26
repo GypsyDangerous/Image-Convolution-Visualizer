@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Image-Convolution-tester/precache-manifest.0ae001a4789b6fc5d3c109b0b4f0b59d.js"
+  "/Image-Convolution-tester/precache-manifest.d317dab65d9e308da2b7029ea68831e0.js"
 );
 
 self.addEventListener('message', (event) => {
