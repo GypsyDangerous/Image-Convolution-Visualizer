@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Image-Convolution-tester/static/css/main.fa51a676.chunk.css",
-    "main.js": "/Image-Convolution-tester/static/js/main.257e25ee.chunk.js",
-    "main.js.map": "/Image-Convolution-tester/static/js/main.257e25ee.chunk.js.map",
+    "main.css": "/Image-Convolution-tester/static/css/main.df452b11.chunk.css",
+    "main.js": "/Image-Convolution-tester/static/js/main.4e8ccaf3.chunk.js",
+    "main.js.map": "/Image-Convolution-tester/static/js/main.4e8ccaf3.chunk.js.map",
     "runtime-main.js": "/Image-Convolution-tester/static/js/runtime-main.28c5c5b9.js",
     "runtime-main.js.map": "/Image-Convolution-tester/static/js/runtime-main.28c5c5b9.js.map",
     "static/js/2.ae30fc42.chunk.js": "/Image-Convolution-tester/static/js/2.ae30fc42.chunk.js",
     "static/js/2.ae30fc42.chunk.js.map": "/Image-Convolution-tester/static/js/2.ae30fc42.chunk.js.map",
     "index.html": "/Image-Convolution-tester/index.html",
-    "precache-manifest.d317dab65d9e308da2b7029ea68831e0.js": "/Image-Convolution-tester/precache-manifest.d317dab65d9e308da2b7029ea68831e0.js",
+    "precache-manifest.3548c07323b22007e8c0897496308300.js": "/Image-Convolution-tester/precache-manifest.3548c07323b22007e8c0897496308300.js",
     "service-worker.js": "/Image-Convolution-tester/service-worker.js",
-    "static/css/main.fa51a676.chunk.css.map": "/Image-Convolution-tester/static/css/main.fa51a676.chunk.css.map",
+    "static/css/main.df452b11.chunk.css.map": "/Image-Convolution-tester/static/css/main.df452b11.chunk.css.map",
     "static/js/2.ae30fc42.chunk.js.LICENSE.txt": "/Image-Convolution-tester/static/js/2.ae30fc42.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.28c5c5b9.js",
     "static/js/2.ae30fc42.chunk.js",
-    "static/css/main.fa51a676.chunk.css",
-    "static/js/main.257e25ee.chunk.js"
+    "static/css/main.df452b11.chunk.css",
+    "static/js/main.4e8ccaf3.chunk.js"
   ]
 }
