@@ -6,3 +6,13 @@
   align-items: center;
   height: 100vh;
 }
+
+.dimension{
+  grid-column: 1/3;
+  justify-self: center;
+}
+
+#dimension{
+   width: 200px;
+   height: 50px;
+}

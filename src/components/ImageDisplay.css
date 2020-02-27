@@ -1,5 +1,5 @@
-#display{
-    background: grey;
+#display, #convolved-display{
+    background: #515151;
     /* max-width: 500px; */
     max-height: 500px;
 }
@@ -8,8 +8,31 @@
    height: fit-content;
    justify-self: center;
    align-self: center;
+   justify-content: center;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
 }
 
 input[type="file"]{
-   max-height: 100px;;
+   max-height: 100px;
+   display: none;
+}
+
+.image-button{
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    background: slategray;
+    cursor: pointer;
+    margin: 10px;
+}
+
+a.image-button{
+    line-height: 3;
+    text-decoration: none;
+    color: black
+}
+
+canvas{
+    margin: 15px;
 }

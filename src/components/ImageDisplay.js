@@ -24,6 +24,9 @@ const convolve = (img, filter, scl, x, y) => {
 
 const ImageDisplay = props => {
     const displayRef = useRef()
+    const convoledRef = useRef()
+    const fileRef = useRef()
+    const downloadRef = useRef()
     const [image, setImage] = useState()
 
     const pickHandler = e => {
@@ -42,12 +45,10 @@ const ImageDisplay = props => {
     useEffect(() => {
         if(image && props.filter){
             const ctx = displayRef.current.getContext("2d")
-
+            const otherCtx = convoledRef.current.getContext("2d")
             ctx.drawImage(image, 0, 0, 500, 500)
             let imgPixels = ctx.getImageData(0, 0, 500, 500);
-
             const height = 500, width = 500
-            // imgPixels = greyScale(imgPixels, width, height)
             ctx.putImageData(imgPixels, 0, 0);
             const newImage = new ImageData(width, height)
             for(let i = 1; i < width-1; i++){
@@ -60,39 +61,31 @@ const ImageDisplay = props => {
                     newImage.data[pixelIndex+3] = 255
                 }
             }
-            ctx.putImageData(newImage, 500, 0)
-
-            // var tmpLink = document.createElement('a'); 
-            // tmpLink.download = 'image.png'; 
-            // // set the name of the download file 
-            // tmpLink.href = newImage;    
-            // // temporarily add link to body and initiate the download  
-            // document.body.appendChild( tmpLink );  
-            // tmpLink.click();  
-            // document.body.removeChild( tmpLink );
-
+            otherCtx.putImageData(newImage, 0, 0)
         }
 
     }, [props.filter, props.scale, image])
 
-    useEffect(() => {
-        if(image){
-            const ctx = displayRef.current.getContext("2d")
-            ctx.drawImage(image, 0, 0, 500, 500)
-            let imgPixels = ctx.getImageData(0, 0, 500, 500);
-            // ctx.putImageData(imgData, 10, 70);
-            const height=500, width=500
-            // imgPixels = greyScale(imgPixels, width, height)
-            
-            ctx.putImageData(imgPixels, 0, 0);
-        }   
-    }, [image])
+    const fileClickHandler = () => {
+        fileRef.current.click()
+    }
+
+    const downloadHandler = e => {
+        const ctx = convoledRef.current
+        const img = ctx.toDataURL("image/png")
+        downloadRef.current.href = img
+    }
 
     return (
         <div className="image-display">
-            <canvas ref={displayRef} height="500" width="1000" id="display"></canvas>
-            <input type="file" id="img" name="img" onChange={pickHandler} accept="image/png, image/jpeg"/>
-            {/* <img src={image} alt="" className/> */}
+            <h2>Original</h2>
+            <h2>Convolved</h2>
+            <canvas ref={displayRef} height="500" width="500" id="display"></canvas>
+            
+            <canvas ref={convoledRef} height="500" width="500" id="convolved-display"></canvas>
+            <input ref={fileRef} type="file" id="img" name="img" onChange={pickHandler} accept="image/png, image/jpeg"/>
+            <button className="image-button" onClick={fileClickHandler}>Choose Image</button>
+            <a ref={downloadRef} onClick={downloadHandler} id="download" className="image-button" download="convolved.png" href="f">Download Convolved Image</a>
         </div>
     )
 }
