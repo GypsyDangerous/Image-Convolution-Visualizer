@@ -1,7 +1,5 @@
 #display, #convolved-display{
     background: #515151;
-    /* max-width: 500px; */
-    max-height: 500px;
 }
 
 .image-display{
@@ -10,7 +8,33 @@
    align-self: center;
    justify-content: center;
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-areas: "original convolved"
+                        "original-canvas new-canvas"
+                        "image-button download-button"
+}
+
+#original {
+    grid-area: original
+}
+
+#convolved {
+    grid-area: convolved
+}
+
+#display {
+    grid-area: original-canvas
+}
+
+#convolved-display{
+    grid-area: new-canvas
+}
+
+#image-button{
+    grid-area: image-button
+}
+
+#download-button{
+    grid-area: download-button
 }
 
 input[type="file"]{
@@ -35,4 +59,41 @@ a.image-button{
 
 canvas{
     margin: 15px;
+}
+
+@media (max-width: 1350px){
+    canvas{
+        height: 300px;
+        width: 300px;
+    }
+
+    .image-display {
+        grid-template-areas: "original"
+                             "original-canvas"
+                             "convolved"
+                             "new-canvas"
+                             "image-button"
+                             "download-button"
+    
+    }
+
+    .image-display h2{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    canvas{
+        margin: 0px;
+    }
+
+    .title{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+
+h1, h2, h3, label{
+    color: white;
+    font-family: 'Roboto Slab';
 }

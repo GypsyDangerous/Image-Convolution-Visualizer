@@ -1,18 +1,30 @@
 .convolution-container{
     display: grid;
-    /* grid-template-columns: repeat(5, 1fr); */
     justify-content: center;
     align-items: center;
     width: 500px;
     height: 500px;
-    margin-right: 0px !important;
+    grid-area: filter;
+    justify-self: center;
+}
+
+#filter-title{
+    grid-area: title
 }
 
 .convolution{
-    display: flex;
-    height: fit-content;
-    flex-direction: column;
+    display: grid;
     align-items: center;
+    justify-content: center;
+    grid-template-areas: "title"
+                         "filter"
+                         "scale"
+                         "size"
+                         "presets";
+}
+
+.setting{
+    margin: 15px;
 }
 
 .filter-number{
@@ -24,10 +36,14 @@
     text-align: center;
 }
 
+.size{
+    grid-area: size
+}
+
 .filter-scale{
-    grid-column: 1 span2;
     margin-top: 50px;
     height: fit-content !important;
+    grid-area: scale
 }
 
 .filter-scale input{

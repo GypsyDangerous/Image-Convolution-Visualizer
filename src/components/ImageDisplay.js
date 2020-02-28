@@ -78,14 +78,13 @@ const ImageDisplay = props => {
 
     return (
         <div className="image-display">
-            <h2>Original</h2>
-            <h2>Convolved</h2>
+            <h2 id="original">Original</h2>
+            <h2 id="convolved">Convolved</h2>
             <canvas ref={displayRef} height="500" width="500" id="display"></canvas>
-            
             <canvas ref={convoledRef} height="500" width="500" id="convolved-display"></canvas>
-            <input ref={fileRef} type="file" id="img" name="img" onChange={pickHandler} accept="image/png, image/jpeg"/>
-            <button className="image-button" onClick={fileClickHandler}>Choose Image</button>
-            <a ref={downloadRef} onClick={downloadHandler} id="download" className="image-button" download="convolved.png" href="f">Download Convolved Image</a>
+            <input id="image-input" ref={fileRef} type="file" name="img" onChange={pickHandler} accept="image/png, image/jpeg"/>
+            <button id="image-button" className="image-button" onClick={fileClickHandler}>Choose Image</button>
+            <a id="download-button" ref={downloadRef} onClick={downloadHandler} className="image-button" download="convolved.png" href="f">Download Convolved Image</a>
         </div>
     )
 }
