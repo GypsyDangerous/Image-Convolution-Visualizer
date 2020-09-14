@@ -1,1 +1,1 @@
-# Image Convolution Tester
+# Image Convolution Visualization
